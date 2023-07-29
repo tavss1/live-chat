@@ -26,6 +26,6 @@ def homepage():
     return render_template("homepage.html")
 
 # Roda o aplicativo
-socketio.run(app, host="192.168.15.6")
+socketio.run(app, host="localhost")
 
 # websocket -> tunel
