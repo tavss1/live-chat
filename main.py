@@ -1,9 +1,8 @@
 # FrontEnd -> parte visual
-    # html, javascript, css
+    # html, javascript
 # Backend -> a logica de funcionamento nos bastidores
-    # python, java, c
-# Framework -> Flask -> criar site
-# ambiente virtual -> local no seu computador c instalações específicas
+    # python
+# Framework -> Flask -> função de criar o site
 
 # Import o flask
 from flask import Flask, render_template
@@ -12,10 +11,10 @@ from flask_socketio import SocketIO, send
 # Cria um aplicativo por meio do flask
 app = Flask(__name__)
 
-# permite que mensagens sejam enviadas de qualquer usuario
+# Permite que mensagens sejam enviadas de qualquer usuario
 socketio = SocketIO(app, cors_allowed_origins="*")
 
-# funcionalidade de enviar mensagem
+# Funcionalidade de enviar mensagem
 @socketio.on("message")
 def gerenciar_mensagem(mensagem):
     send(mensagem, broadcast=True)
